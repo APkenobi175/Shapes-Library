@@ -1,4 +1,4 @@
-## Assignment 1 Decissions:
+## Assignment 1 Decisions and Notes:
 
 1. We need a base INTERFACE called shape.
 2. I believe an interface is the right move here due to every shape needing to implement the same move method,
@@ -35,3 +35,15 @@ classDiagram
 ```
 
 - Now that I have a starting point the rest of the UML will be done in lucid chart.
+
+- The rectangle only needs two points. getArea() can calculate the length and the width of the rectangle based on the points, and then just return the area
+- We shouldn't ever have to expose the width and height properties to the user.
+
+
+- A square "is-a" rectangle so we can inherit from rectangle.
+
+
+- Now that I have hit my third shape that wants a get area method, I think its a good idea to create a 
+
+
+- circle will inherit from ellipse, and now we are done with the UML and we can start coding!
