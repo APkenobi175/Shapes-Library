@@ -17,7 +17,11 @@ class Line @Throws(IllegalArgumentException::class) constructor(p1: Point, p2: P
     fun getP2(): Point = p2.clone()
 
     // Return slope of line
-    fun computeSlope(): Double = (p2.getY() - p1.getY()) / (p2.getX() - p1.getX())
+    fun computeSlope(): Double {
+        val dx = p2.getX() - p1.getX()
+        require(dx != 0.0) { "Slope is undefined for vertical lines (dx = 0)" }
+        return (p2.getY() - p1.getY()) / dx
+    }
     // Return length of line
     fun computeLen(): Double = sqrt((p2.getX() - p1.getX()).pow(2.0) + (p2.getY() - p1.getY()).pow(2.0))
 
