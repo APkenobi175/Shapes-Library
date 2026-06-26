@@ -2,7 +2,6 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import org.junit.jupiter.api.DisplayName
 import kotlin.test.assertFailsWith
-import kotlin.test.assertNotSame
 
 @DisplayName("Rectangle Class Tests")
 class RectangleTest {
@@ -62,5 +61,30 @@ class RectangleTest {
     fun testComputeArea(){
         val rectangle = Rectangle(Point(2.0, 1.0), Point(5.0, 5.0))
         assertEquals(12.0, rectangle.computeArea())
+    }
+
+    @Test
+    @DisplayName("Test Move Positive Direction")
+    fun testMove() {
+        val rectangle = Rectangle(Point(3.0, 5.0), Point(1.0, 1.0))
+        rectangle.move(3.0, 4.0)
+        val p1 = rectangle.getP1()
+        val p2 = rectangle.getP2()
+        assertEquals(6.0, p1.getX())
+        assertEquals(4.0, p2.getX())
+        assertEquals(9.0, p1.getY())
+        assertEquals(5.0, p2.getY())
+    }
+    @Test
+    @DisplayName("Test Move Negative Direction")
+    fun testMoveNegative() {
+        val rectangle = Rectangle(Point(3.0, -5.0), Point(1.0, -1.0))
+        rectangle.move(-2.0, 4.0)
+        val p1 = rectangle.getP1()
+        val p2 = rectangle.getP2()
+        assertEquals(1.0, p1.getX())
+        assertEquals(-1.0, p2.getX())
+        assertEquals(-1.0, p1.getY())
+        assertEquals(3.0, p2.getY())
     }
 }
