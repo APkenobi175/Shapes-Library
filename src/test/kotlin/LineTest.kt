@@ -62,6 +62,13 @@ class LineTest{
     }
 
     @Test
+    @DisplayName("Test Compute Slope Vertical Line Throws Exception")
+    fun testComputeSlopeVerticalThrows(){
+        val line = Line(Point(2.0, 1.0), Point(2.0, 5.0))
+        assertFailsWith<IllegalArgumentException> { line.computeSlope() }
+    }
+
+    @Test
     @DisplayName("Test Compute Length")
     fun testComputeLength(){
         val line = Line(Point(0.0, 0.0), Point(3.0, 4.0))
