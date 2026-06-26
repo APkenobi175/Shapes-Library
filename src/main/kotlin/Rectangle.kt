@@ -1,6 +1,6 @@
 import kotlin.math.abs
 
-class Rectangle @Throws(IllegalArgumentException::class)
+open class Rectangle @Throws(IllegalArgumentException::class)
 constructor(p1: Point, p2: Point): Shape, HasArea {
 
     // Encapsulation
