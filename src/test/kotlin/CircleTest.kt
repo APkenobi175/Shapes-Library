@@ -1,8 +1,7 @@
 import kotlin.test.Test
 import org.junit.jupiter.api.DisplayName
 import kotlin.test.assertFailsWith
-import kotlin.test.assertEquals
-import kotlin.math.PI
+
 
 @DisplayName("Ellipse Class Tests")
 class CircleTest {
@@ -19,5 +18,13 @@ class CircleTest {
     @DisplayName("Test Valid Circle Successfully Creates")
     fun testValidCircle(){
         val circle = Circle(Point(1.0, 1.0), 6.0, 6.0)
+    }
+
+    @Test
+    @DisplayName("Test Zero Radius Throws Exception")
+    fun testZeroRadius() {
+        assertFailsWith<IllegalArgumentException> {
+            val circle = Circle(Point(1.0, 1.0), 0.0, 0.0)
+        }
     }
 }
