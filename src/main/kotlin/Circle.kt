@@ -1,11 +1,14 @@
 class Circle @Throws(IllegalArgumentException::class)
-constructor(center: Point, private val radiusX: Double, private val radiusY: Double): Ellipse(center, radiusX, radiusY) {
+constructor(center: Point, private val radius: Double): Ellipse(center, radius, radius) {
 
     init{
-        require(radiusX == radiusY && radiusY > 0 && radiusX > 0){
-            "A circle must have equal X and Y Radii"
+        require(radius > 0){
+            "Cannot have an area of zero (Radius must be positive)"
         }
     }
+
+    fun getRadius():  Double = radius
+
 
 
 

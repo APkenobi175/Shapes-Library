@@ -62,10 +62,10 @@ class LineTest{
     }
 
     @Test
-    @DisplayName("Test Compute Slope Vertical Line Throws Exception")
-    fun testComputeSlopeVerticalThrows(){
+    @DisplayName("Test Compute Slope Vertical Line Returns Infinity")
+    fun testComputeSlopeVerticalReturnsInfinity(){
         val line = Line(Point(2.0, 1.0), Point(2.0, 5.0))
-        assertFailsWith<IllegalArgumentException> { line.computeSlope() }
+        assertEquals(Double.POSITIVE_INFINITY, line.computeSlope())
     }
 
     @Test

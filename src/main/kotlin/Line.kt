@@ -19,7 +19,7 @@ class Line @Throws(IllegalArgumentException::class) constructor(p1: Point, p2: P
     // Return slope of line
     fun computeSlope(): Double {
         val dx = p2.getX() - p1.getX()
-        require(dx != 0.0) { "Slope is undefined for vertical lines (dx = 0)" }
+        if (dx == 0.0) return Double.POSITIVE_INFINITY
         return (p2.getY() - p1.getY()) / dx
     }
     // Return length of line
