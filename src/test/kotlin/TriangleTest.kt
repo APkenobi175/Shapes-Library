@@ -9,7 +9,7 @@ class TriangleTest {
     @DisplayName("Triangle with all points on same line throws Exception")
     fun testInvalidTriangle(){
         assertFailsWith<IllegalArgumentException>{
-            val triangle = Triangle(Point(1.0, 1.0), Point(1.0, 1.0), Point(1.0, 1.0))
+            val triangle = Triangle(Point(0.0, 0.0), Point(1.0, 1.0), Point(2.0, 2.0))
         }
     }
 
